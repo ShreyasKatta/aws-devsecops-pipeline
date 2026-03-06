@@ -1,0 +1,21 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      docker: 20
+  pre_build:
+    commands:
+      - echo "Pulling OWASP ZAP Docker image..."
+      - docker pull owasp/zap2docker-stable
+  build:
+    commands:
+      - echo "Executing ZAP baseline scan against target environment."
+      - docker run -v $(pwd):/zap/wrk/:rw -t owasp/zap2docker-stable zap-baseline.py -t http://devsecops-staging-app.elasticbeanstalk.com -r zap_report.html
+  post_build:
+    commands:
+      - echo "Security scan execution completed."
+
+artifacts:
+  files:
+    - zap_report.html
