@@ -7,6 +7,8 @@ phases:
       - docker pull ghcr.io/zaproxy/zaproxy:stable
   build:
     commands:
+      - echo "Granting folder permissions to allow the Docker container to save the report."
+      - chmod 777 $(pwd)
       - echo "Executing ZAP baseline scan against target environment."
       - docker run -v $(pwd):/zap/wrk/:rw -t ghcr.io/zaproxy/zaproxy:stable zap-baseline.py -t http://devsecops-staging-app-env.eba-cfjm6imn.ap-south-1.elasticbeanstalk.com/ -r zap_report.html
   post_build:
