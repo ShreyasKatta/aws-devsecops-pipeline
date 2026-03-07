@@ -3,12 +3,12 @@ version: 0.2
 phases:
   pre_build:
     commands:
-      - echo "Pulling OWASP ZAP Docker image..."
-      - docker pull owasp/zap2docker-stable
+      - echo "Pulling ZAP Docker image from GHCR..."
+      - docker pull ghcr.io/zaproxy/zaproxy:stable
   build:
     commands:
       - echo "Executing ZAP baseline scan against target environment."
-      - docker run -v $(pwd):/zap/wrk/:rw -t owasp/zap2docker-stable zap-baseline.py -t http://devsecops-staging-app-env.eba-cfjm6imn.ap-south-1.elasticbeanstalk.com/ -r zap_report.html
+      - docker run -v $(pwd):/zap/wrk/:rw -t ghcr.io/zaproxy/zaproxy:stable zap-baseline.py -t http://devsecops-staging-app-env.eba-cfjm6imn.ap-south-1.elasticbeanstalk.com/ -r zap_report.html
   post_build:
     commands:
       - echo "Security scan execution completed."
