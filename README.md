@@ -13,6 +13,8 @@
 
 **What you are watching:** The pipeline actively attacking the staging environment. ZAP detects a High-Severity Cross-Site Scripting (XSS) vulnerability, immediately fails the build, and blocks the deployment. 
 
+Click the image below to watch a live demonstration of the DevSecOps security pipeline ⬇️
+
 [![Watch the AWS DevSecOps Pipeline Demonstration](https://github.com/user-attachments/assets/9614920d-e429-405e-8887-edfefbc2b91c)](https://youtu.be/L_TNvdfz9PM)
 
 ---
