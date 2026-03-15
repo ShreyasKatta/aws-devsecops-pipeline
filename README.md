@@ -1,9 +1,13 @@
 # 🛡️ Automated DevSecOps Pipeline: The Security "Quality Gate"
 
+<div align="center">
+
 ![AWS CodePipeline](https://img.shields.io/badge/AWS_CodePipeline-CI%2FCD-FF9900?style=plastic&logo=amazonaws&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-Containerized_Scan-2496ED?style=plastic&logo=docker&logoColor=white)
 ![OWASP ZAP](https://img.shields.io/badge/OWASP_ZAP-Security_Gate-00549A?style=plastic&logo=owasp&logoColor=white)
 ![Python Flask](https://img.shields.io/badge/Target_App-Python_Flask-3776AB?style=plastic&logo=python&logoColor=white)
+
+</div>
 
 > **Mission:** Stop vulnerable code before it ever reaches the production server. This project demonstrates "Shift-Left" security by integrating Dynamic Application Security Testing (DAST) directly into the continuous integration workflow.
 
